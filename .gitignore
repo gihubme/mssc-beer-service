@@ -69,6 +69,10 @@ local.properties
 ######################
 /log/
 */target/**
+
+# anywhere target or log directories with entire contents
+**/target/
+**/log/
 ######################
 # Gradle
 ######################
@@ -140,3 +144,7 @@ Desktop.ini
 .eslintcache
 /.idea/
 
+######################
+#https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+#/src/acleaneva-io/autogen_ddl/
+/a-temp/

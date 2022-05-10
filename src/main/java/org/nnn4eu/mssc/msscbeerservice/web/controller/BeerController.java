@@ -3,6 +3,7 @@ package org.nnn4eu.mssc.msscbeerservice.web.controller;
 import org.nnn4eu.mssc.msscbeerservice.web.model.BeerDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -18,7 +19,7 @@ public class BeerController {
     }
 
     @PostMapping()
-    public ResponseEntity<BeerDto> handlePost(@RequestBody BeerDto dto) {
+    public ResponseEntity<BeerDto> handlePost(@Validated @RequestBody BeerDto dto) {
 //        todo impl
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.CREATED);
     }
@@ -30,7 +31,7 @@ public class BeerController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity updateBeerById(@PathVariable("id") UUID id) {
+    public ResponseEntity updateBeerById(@PathVariable("id") UUID id, @RequestBody @Validated BeerDto beerDto) {
 //        todo impl
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }

@@ -21,6 +21,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <org.lombok.version>1.18.24</org.lombok.version>
     </properties>
 
     <dependencies>
@@ -72,6 +73,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <version>${org.lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -112,6 +114,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.6.7</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -127,7 +130,8 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>[1.18.16,)</version>
+                            <!--<version>[1.18.16,)</version>-->
+                            <version>${org.lombok.version}</version>
                         </path>
                         <!-- This is needed when using Lombok 1.18.16 and above -->
                         <path>

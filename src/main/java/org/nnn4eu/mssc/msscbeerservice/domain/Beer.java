@@ -29,7 +29,7 @@ public class Beer {
     @Column(updatable = false)
     private Timestamp createdDate;
     @UpdateTimestamp
-    private Timestamp lstModifiedDate;
+    private Timestamp lastModifiedDate;
     private String beerName;
     private String beerStyle;
 

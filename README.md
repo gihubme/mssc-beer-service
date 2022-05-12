@@ -1,7 +1,8 @@
+[![CircleCI](https://circleci.com/gh/gihubme/mssc-beer-service/tree/main.svg?style=svg)](https://circleci.com/gh/gihubme/mssc-beer-service/tree/main)
+
 # MSSC Beer Service
 
-Spring boot microservice
-
+Spring boot microservice.
 
 #### Links
 

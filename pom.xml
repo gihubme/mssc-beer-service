@@ -11,7 +11,7 @@
     <groupId>org.nnn4eu.mssc</groupId>
     <artifactId>mssc-beer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MSSC Beer Service</name>
+    <name>mssc-beer-service</name>
     <description>MSSC Beer Service</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

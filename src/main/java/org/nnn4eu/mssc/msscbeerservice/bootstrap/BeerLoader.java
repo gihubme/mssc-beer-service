@@ -3,11 +3,10 @@ package org.nnn4eu.mssc.msscbeerservice.bootstrap;
 import org.nnn4eu.mssc.msscbeerservice.domain.Beer;
 import org.nnn4eu.mssc.msscbeerservice.repositories.BeerRepository;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@Component
+//@Component
 public class BeerLoader implements CommandLineRunner {
     public static final String BEER_1_UPC = "0631234200036";
     public static final String BEER_2_UPC = "0631234300019";
@@ -54,6 +53,7 @@ public class BeerLoader implements CommandLineRunner {
                     .price(new BigDecimal("11.95"))
                     .build());
         }
-//        System.out.println("Loaded Beers: " + beerRepository.count());
+        //using data.sql file now
+        //   loadBeerObjects();
     }
 }

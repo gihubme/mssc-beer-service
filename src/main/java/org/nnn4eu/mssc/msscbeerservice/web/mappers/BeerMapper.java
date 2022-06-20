@@ -10,5 +10,7 @@ import org.nnn4eu.mssc.msscbeerservice.web.model.BeerDto;
 public interface BeerMapper {
     BeerDto beerToBeerDto(Beer beer);
 
+    BeerDto beerToBeerDtoWithInventoryDto(Beer beer);
+
     Beer beerDtoToBeer(BeerDto beerDto);
 }

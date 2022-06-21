@@ -1,6 +1,7 @@
 package org.nnn4eu.mssc.msscbeerservice.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.nnn4eu.mssc.msscbeerservice.domain.Beer;
 import org.nnn4eu.mssc.msscbeerservice.repositories.BeerRepository;
 import org.nnn4eu.mssc.msscbeerservice.web.controller.NotFoundException;
@@ -8,6 +9,7 @@ import org.nnn4eu.mssc.msscbeerservice.web.mappers.BeerMapper;
 import org.nnn4eu.mssc.msscbeerservice.web.model.BeerDto;
 import org.nnn4eu.mssc.msscbeerservice.web.model.BeerPagedList;
 import org.nnn4eu.mssc.msscbeerservice.web.model.BeerStyleEnum;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -16,17 +18,20 @@ import org.springframework.util.StringUtils;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
 
+    @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")
     @Override
     public BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest,
                                    Boolean showInventoryOnHand) {
         BeerPagedList beerPagedList;
         Page<Beer> beerPage;
+        log.debug("listBeers called, it is not cashed");
 
         if (!StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle)) {
             //search both
@@ -67,6 +72,7 @@ public class BeerServiceImpl implements BeerService {
         return beerPagedList;
     }
 
+    @Cacheable(cacheNames = "beerListCache", key = "beerId", condition = "#showInventoryOnHand == false")
     @Override
     public BeerDto getById(UUID id, Boolean showInventoryOnHand) {
         if (showInventoryOnHand) {

@@ -6,6 +6,7 @@
             <groupId>org.nnn4eu.mssc</groupId>
             <artifactId>mssc-bom</artifactId>
             <version>1.0</version>
+            <relativePath />
     </parent>
     <groupId>org.nnn4eu.mssc</groupId>
     <artifactId>mssc-beer-service</artifactId>

@@ -6,8 +6,6 @@
             <groupId>org.nnn4eu.mssc</groupId>
             <artifactId>mssc-bom</artifactId>
             <version>1.0</version>
-<!--        https://packagecloud.io/nikakar/mvnrelease/packages/org/nnn4eu/mssc/mssc-bom/1.0/mssc-bom-1.0.pom-->
-<!--        https://packagecloud.io/nikakar/mvnrelease/packages/java/org.nnn4eu.mssc/mssc-bom-1.0.pom/artifacts/mssc-bom-1.0.pom/download-->
     </parent>
     <groupId>org.nnn4eu.mssc</groupId>
     <artifactId>mssc-beer-service</artifactId>
@@ -94,4 +92,16 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>nikakar-mvnrelease</id>
+            <url>https://packagecloud.io/nikakar/mvnrelease/maven2</url>
+        </repository>
+    </repositories>
 </project>

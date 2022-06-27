@@ -48,7 +48,10 @@ jobs:
       # 2. Then run your tests!
       - run:
           name: IntegrationTest
-          command: mvn integration-test
+          command: ./mvnw integration-test
+      -run:
+          name: UnitTest
+          command: ./mvnw test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

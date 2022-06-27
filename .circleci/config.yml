@@ -49,7 +49,7 @@ jobs:
       - run:
           name: IntegrationTest
           command: ./mvnw integration-test
-      -run:
+      - run:
           name: UnitTest
           command: ./mvnw test
 

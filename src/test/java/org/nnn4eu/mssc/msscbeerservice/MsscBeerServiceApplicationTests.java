@@ -8,6 +8,7 @@ class MsscBeerServiceApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("test");
     }
 
 }

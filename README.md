@@ -2,7 +2,7 @@
 
 # MSSC Beer Service
 
-Spring boot microservice.
+Spring boot microservice..
 
 #### Links
 
